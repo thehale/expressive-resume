@@ -1,0 +1,63 @@
+\documentclass{ExpressiveResume}
+
+% ----- Resume -----
+\begin{document}
+
+% ----- Name + Contact Information -----
+\resumeheader[
+    firstname=John,
+    middleinitial=N,
+    lastname=Doe,
+    email=john.doe@example.com,
+    phone=123-456-7890,
+    github=johndoe,
+    city=Town,
+    state=State,
+    qrcode=./images/qr.png,
+    fixobjectivespacing=true
+]
+
+\objective{A software engineering graduate with 2 years of work
+experience at various internships \\ seeking opportunities to develop
+web/mobile applications for Company XYZ.}
+
+% ----- Education -----
+\section{Education}
+
+\experience{Bachelor of Science}{Software Engineering}{Aug 2018}{May 2022}{
+    \hfill GPA: 4.00 \newline
+    Fabulous Honors College \newline
+    Super Duper University, Town, State \newline
+}
+
+% ----- Work Experience -----
+\section{Work Experience}
+
+\experience{Summer Intern}{Radiant Software Systems}{Aug 2021}{May 2021}{
+    \achievement{
+        
+        Developed a mobile app in \tech{React Native} that was
+        downloaded 100k times on Google Play.
+
+    }
+    \achievement{
+
+        Collaborated in an \tech{Agile/Scrum} team of 8 engineers to
+        deliver new features every 2 weeks.
+        
+    }
+}
+
+% ----- Technical Projects -----
+\section{Technical Projects}
+
+\experience{Expressive Resume}{Personal Project}{Nov 2021}{Dec 2021}{
+    \achievement{
+
+        Created a \tech{\LaTeX} class that makes it easy for anyone to
+        quickly create a beautiful resume and cover letter.
+
+    }
+}
+
+\end{document}
