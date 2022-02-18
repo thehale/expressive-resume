@@ -24,6 +24,7 @@
         firstname,middleinitial,lastname,
         email,
         phone,  % Must be in XXX-XXX-XXXX format to become a valid link
+        linkedin,
         github,
         city,  % Ignored if `state` is not also provided
         state,
@@ -39,13 +40,22 @@
                 {%
                     \email{\commandkey{email}}%
                     \ifcommandkey{phone}{\contactseparator}%
-                        {\ifcommandkey{github}{\contactseparator}%
-                            {\ifcommandkey{state}{\contactseparator}{}}}%
+                        {\ifcommandkey{linkedin}{\contactseparator}%
+                            {\ifcommandkey{github}{\contactseparator}%
+                                {\ifcommandkey{state}{\contactseparator}{}}}}%
                 }%
                 {}%
             \ifcommandkey{phone}%
                 {%
                     \phone{\commandkey{phone}}%
+                    \ifcommandkey{linkedin}{\contactseparator}%
+                        {\ifcommandkey{github}{\contactseparator}%
+                            {\ifcommandkey{state}{\contactseparator}{}}}%
+                }%
+                {}%
+            \ifcommandkey{linkedin}%
+                {%
+                    \linkedin{\commandkey{linkedin}}%
                     \ifcommandkey{github}{\contactseparator}%
                         {\ifcommandkey{state}{\contactseparator}{}}%
                 }%

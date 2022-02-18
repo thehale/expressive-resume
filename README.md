@@ -44,6 +44,7 @@ parameters are optional).
     lastname=,              % Your last name
     email=,                 % Your email
     phone=,                 % Your phone number, formatted as XXX-XXX-XXXX
+    linkedin=,              % Your LinkedIn handle (without the @)
     github=,                % Your GitHub handle (without the @)
     city=,                  % Your city of residence (ignored if no `state` is given)
     state=,                 % Your state of residence
@@ -113,6 +114,7 @@ Create your cover letter header with the `coverletterheader` command
     lastname=,              % Your last name
     email=,                 % Your email
     phone=,                 % Your phone number, formatted as XXX-XXX-XXXX
+    linkedin=,              % Your LinkedIn handle (without the @)
     github=,                % Your GitHub handle (without the @)
     city=,                  % Your city of residence (ignored if no `state` is given)
     state=,                 % Your state of residence
