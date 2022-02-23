@@ -64,7 +64,7 @@ to add.
 
 Adding experiences and achievements is also straightforward.
 ```tex
-\experience{Position}{Company}{Start Date}{End Date}{
+\experience{Position}{Organization}{Start Date}{End Date}{
     \achievement{
         % Describe your achievement here
     }
