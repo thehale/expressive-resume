@@ -29,7 +29,7 @@ Use a `documentclass` of `ExpressiveResume`
 
 \begin{document}
 
-% The contents of your resume will go here.
+% You will write your resume here.
 
 \end{document}
 ```
@@ -58,7 +58,7 @@ to add.
 
 ```tex
 \objective{
-    % Your objective statement here.
+    % Write your objective statement here.
 }
 ```
 
@@ -99,7 +99,7 @@ Use a `documentclass` of `ExpressiveCoverLetter`
 
 \begin{document}
 
-% The contents of your cover letter will go here.
+% You will write your cover letter here.
 
 \end{document}
 ```
