@@ -1,27 +1,60 @@
 # Expressive Resume
 
-A beautiful resume/cover letter LaTeX template pair that are extraordinarily easy to use.
+A beautiful resume/cover letter LaTeX template pair that are extraordinarily
+easy to use.
 
 **Why Expressive Resume??**
 
-Most LaTeX resume/cover letter templates start with 100-200 lines of
-formatting code (or more) that you have to scroll through before you
-can focus on writing the _contents_ of your resume/cover letter.
+Most LaTeX resume/cover letter templates start with 100-200 lines of formatting
+code (or more) that you have to scroll through before you can focus on writing
+the _contents_ of your resume/cover letter.
 
-With Expressive Resume, you simply specify the `documentclass` and
-begin writing! There are also several custom functions that further
-simplify your resume/cover letter's `.tex` code into clean expressions
-of your accomplishments that are easy to update over time.
+With Expressive Resume, you simply specify the `documentclass` and begin
+writing! There are also several custom functions that further simplify your
+resume/cover letter's `.tex` code into clean expressions of your accomplishments
+that are easy to update over time.
 
-Additionally, ExpressiveResume is written in LaTeX2e, so it is
-compatible with most LaTeX typesetting engines.
+Additionally, Expressive Resume is written in LaTeX2e, so it is compatible with
+most LaTeX typesetting engines.
 
 ## Quickstart
 
+The recommended way to use Expressive Resume is via the included "VS Code
+devcontainer" which has LaTeX pre-installed in an sandboxed environment
+compatible with Windows, Linux, and MacOS.
+
+If you already have LaTeX installed, you can clone the repository and skip
+straight to [Create Your Expressive Resume](#create-your-expressive-resume).
+### Installation + Setup
+
+Start by making sure [Docker](https://docs.docker.com/get-docker/) and [VS
+Code](https://code.visualstudio.com/) (including the [Remote Containers
+Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers))
+are installed on your machine.
+
+Then create a copy of Expressive Resume and open it in VS Code:
+1. Press the [Use this
+   template](https://github.com/jhale1805/expressive-resume/generate) button
+   **OR** [create a fork](https://github.com/jhale1805/expressive-resume/fork).
+2. Clone your copy of Expressive Resume onto your computer and open it in VS
+   Code.
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/expressive-resume.git
+cd expressive-resume
+code .
+```
+
+VS Code should prompt you to **Reopen in Container**. Accept that prompt.
+- If you don't see this pop-up, go to `View -> Command Palette ->
+  Remote-Containers: Re-Open Folder in Container`
+
+- Note that opening Expressive Resume for the first time may take several
+  minutes as it downloads and prepares the 4 GB sandboxed LaTeX installation.
+  Successive launches will be much faster.
+
 ### Create Your Expressive Resume
 
-Clone this repository, then create an empty `.tex` file in the `src`
-folder alongside the `.cls` files.
+Create an empty `.tex` file in the `src` folder alongside the `.cls` files.
 
 Use a `documentclass` of `ExpressiveResume`
 ```tex
@@ -34,8 +67,8 @@ Use a `documentclass` of `ExpressiveResume`
 \end{document}
 ```
 
-Create your resume header with the `resumeheader` command (all
-parameters are optional).
+Create your resume header with the `resumeheader` command (all parameters are
+optional).
 
 ```tex
 \resumeheader[
@@ -53,8 +86,7 @@ parameters are optional).
 ]
 ```
 
-If you want a summary/objective statement in your resume, that's easy
-to add.
+If you want a summary/objective statement in your resume, that's easy to add.
 
 ```tex
 \objective{
@@ -74,8 +106,8 @@ Adding experiences and achievements is also straightforward.
 }
 ```
 
-You can also easily add inline highlights for the technologies and
-skills relevant to the job position you are applying for.
+You can also easily add inline highlights for the technologies and skills
+relevant to the job position you are applying for.
 
 ```tex
 \tech{
@@ -83,15 +115,13 @@ skills relevant to the job position you are applying for.
 }
 ```
 
-And that's it! Take a look at the [resume
-example](#example-expressive-resume) to see just how cleanly all
-of these pieces work together in a simple, readable `.tex` file to
-produce a beautiful resume.
+And that's it! Take a look at the [resume example](#example-expressive-resume)
+to see just how cleanly all of these pieces work together in a simple, readable
+`.tex` file to produce a beautiful resume.
 
 ### Create Your Expressive Cover Letter
 
-Clone this repository, then create an empty `.tex` file in the `src`
-folder alongside the `.cls` files.
+Create an empty `.tex` file in the `src` folder alongside the `.cls` files.
 
 Use a `documentclass` of `ExpressiveCoverLetter`
 ```tex
@@ -104,8 +134,8 @@ Use a `documentclass` of `ExpressiveCoverLetter`
 \end{document}
 ```
 
-Create your cover letter header with the `coverletterheader` command
-(all parameters are optional).
+Create your cover letter header with the `coverletterheader` command (all
+parameters are optional).
 
 ```tex
 \coverletterheader[
@@ -121,11 +151,11 @@ Create your cover letter header with the `coverletterheader` command
 ]
 ```
 
-From there, just write out the text of your cover letter, using a blank
-line between paragraphs.
+From there, just write out the text of your cover letter, using a blank line
+between paragraphs.
 
-You can also easily add inline highlights for the technologies and
-skills relevant to the job position you are applying for.
+You can also easily add inline highlights for the technologies and skills
+relevant to the job position you are applying for.
 
 ```tex
 \tech{
@@ -134,13 +164,13 @@ skills relevant to the job position you are applying for.
 ```
 
 And that's it! Take a look at the [cover letter
-example](#example-expressive-cover-letter) to see just how cleanly all
-of these pieces work together in a simple, readable `.tex` file to
-produce a beautiful cover letter.
+example](#example-expressive-cover-letter) to see just how cleanly all of these
+pieces work together in a simple, readable `.tex` file to produce a beautiful
+cover letter.
 
 ## Examples
 ### Example Expressive Resume
-![Example Expressive Resume](./examples/resume.png) 
+![Example Expressive Resume](./examples/resume.png)
 
 ```tex
 \documentclass{ExpressiveResume}
@@ -177,7 +207,7 @@ web/mobile applications for Company XYZ.}
 % ----- Work Experience -----
 \section{Work Experience}
 \experience{Summer Intern}{Radiant Software Systems}{Aug 2021}{May 2021}{
-    \achievement{   
+    \achievement{
         Developed a mobile app in \tech{React Native} that was
         downloaded 100k times on Google Play.
     }
