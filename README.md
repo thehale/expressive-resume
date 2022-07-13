@@ -1,7 +1,13 @@
-# Expressive Resume
+<div align="center">
 
+# Expressive Resume
 A beautiful resume/cover letter LaTeX template pair that are extraordinarily
 easy to use.
+
+![Example Expressive Resume](/examples/expressive_resume_readme_banner.svg)
+
+</div>
+
 
 **Why Expressive Resume??**
 
