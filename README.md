@@ -205,8 +205,7 @@ web/mobile applications for Company XYZ.}
 % ----- Education -----
 \section{Education}
 \experience{Bachelor of Science}{Software Engineering}{Aug 2018}{May 2022}{
-    \hfill GPA: 4.00 \newline
-    Fabulous Honors College \newline
+    \noindent Fabulous Honors College \hfill GPA: 4.00 \newline
     Super Duper University, Town, State \newline
 }
 
