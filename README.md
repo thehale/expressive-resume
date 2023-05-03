@@ -17,17 +17,17 @@ easy to use.
 
 **Why Expressive Resume??**
 
-Most LaTeX resume/cover letter templates start with 100-200 lines of formatting
-code (or more) that you have to scroll through before you can focus on writing
-the _contents_ of your resume/cover letter.
-
-With Expressive Resume, you simply specify the `documentclass` and begin
-writing! There are also several custom functions that further simplify your
-resume/cover letter's `.tex` code into clean expressions of your accomplishments
-that are easy to update over time.
-
-Additionally, Expressive Resume is written in LaTeX2e, so it is compatible with
-most LaTeX typesetting engines.
+ - **Declarative:** Use semantically meaningful commands like `\experience` and
+   `\achievement` instead of worrying about LaTeX plumbing.
+ - **Cover Letter:** Expressive includes both a resume template *and* a matching
+   cover letter template.
+ - **Machine/ATS Friendly:** Expressive Resume was designed by an engineer with
+   experience building automated resume parsers for [Applicant Tracking Systems](https://www.indeed.com/hire/c/info/what-is-ats#:~:text=when%20the%20ats%20parses%20a%20resume%20and%20determines%20it%20meets%20your%20requirements%2C%20it%20automatically%20moves%20that%20applicant%20forward%20in%20the%20hiring%20process.)
+ - **Maintainability:** Most LaTeX resume/cover letter templates start with 100-200
+   lines of formatting code (or more). With Expressive Resume, you simply specify
+   the `documentclass` and begin writing!
+ - **Compatibility:** Expressive Resume is written in LaTeX2e, so it is compatible
+   with most LaTeX typesetting engines.
 
 ## Quickstart
 
