@@ -1,8 +1,14 @@
 <div align="center">
 
 # Expressive Resume
+
 A beautiful resume/cover letter LaTeX template pair that are extraordinarily
 easy to use.
+
+<!-- BADGES -->
+[![](https://badgen.net/github/license/thehale/expressive-resume)](https://github.com/thehale/expressive-resume/blob/master/LICENSE)
+[![](https://badgen.net/badge/icon/Sponsor/pink?icon=github&label)](https://github.com/sponsors/thehale)
+[![](https://badgen.net/badge/icon/Follow%20@jhaledev/1DA1F2?icon=twitter&label)](https://twitter.com/intent/user?screen_name=jhaledev)
 
 ![Example Expressive Resume](/examples/expressive_resume_readme_banner.svg)
 
