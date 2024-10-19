@@ -119,6 +119,27 @@ Adding experiences and achievements is also straightforward.
 }
 ```
 
+```tex
+\multiexperience{Organization}{
+    {\progression{Position}{Start Date}{End Date}{
+        \achievement{
+            % Describe your achievement here
+        }
+        \achievement{
+            % Describe another achievement here.
+        }
+    }}
+    {\progression{Position}{Start Date}{End Date}{
+        \achievement{
+            % Describe your achievement here
+        }
+        \achievement{
+            % Describe another achievement here.
+        }
+    }}
+}
+```
+
 You can also easily add inline highlights for the technologies and skills
 relevant to the job position you are applying for.
 

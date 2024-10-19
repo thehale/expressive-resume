@@ -111,17 +111,55 @@
 \newcommand{\location}[1]{\faIcon{map-marker-alt} #1}
 % Experience/Achievements
 \newcommand{\tech}[1]{\textbf{#1}}
-\newcommand{\role}[2]{\textbf{#2 | \emph{#1}}}
+\newcommand{\employer}[1]{\textbf{#1}}
+\newcommand{\jobtitle}[1]{\emph{#1}}
+\newcommand{\role}[2]{\employer{#2} | \jobtitle{#1}}
 \newcommand{\subrole}[4]{\emph{#1 (#2 - #3)} #4}
 \newcommand{\tenure}[2]{\textsc{#1} - \textsc{#2}}
 \newcommand{\achievement}[1]{%
+    \vspace{2pt}
     \begin{itemize}
         \small{\item #1}
     \end{itemize}
 }
 \newcommand{\experience}[5]{%
     \noindent\role{#1}{#2}\hfill\tenure{#3}{#4}\par
+    \vspace{2pt}
     #5
+    \vspace{7pt}
+}
+
+%% Add support for promotions using Linkedin-style linked itemized lists
+\newcommand{\linkeditem}[1]{
+  \begin{tikzpicture}[remember picture]%
+  \node (#1) [gray,circle,fill,inner sep=1.5pt]{};
+  \end{tikzpicture}%
+}
+\newenvironment{linkeditemize}{%
+    \renewcommand{\theenumi}{\protect\linkeditem{\arabic{enumi}}}
+    \renewcommand{\labelenumi}{\theenumi}
+    \begin{enumerate}
+        \setlength{\itemsep}{7pt}
+}{ \end{enumerate} \begin{tikzpicture}[remember picture,overlay]
+  \ifnum\value{enumi}>1
+  \foreach \x [remember=\x as \lastx (initially 1)] 
+    in {2,...,\value{enumi}}{
+    \draw[gray, shorten >=1mm, shorten <=1mm] (\lastx) -- (\x);}
+  \fi
+  \end{tikzpicture}
+}
+\newcommand{\progression}[4]{%
+    \noindent
+    \jobtitle{#1}\hfill\tenure{#2}{#3}
+    #4
+}
+\newcommand{\multiexperience}[2]{%
+    \noindent\employer{#1}\par
+    \begin{linkeditemize}
+        \foreach \expr in {#2} {
+            \item \expr
+        }
+    \end{linkeditemize}
     \vspace{7pt}
 }
 
