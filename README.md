@@ -8,8 +8,8 @@ easy to use.
 <!-- BADGES -->
 [![](https://badgen.net/github/license/thehale/expressive-resume)](https://github.com/thehale/expressive-resume/blob/master/LICENSE)
 [![](https://badgen.net/badge/icon/Sponsor/pink?icon=github&label)](https://github.com/sponsors/thehale)
-[![Joseph Hale's software engineering blog](https://img.shields.io/badge/jhale.dev-black.svg?style=plastic&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB2aWV3Qm94PSIwIDAgMS4wNTggMS4wNTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgY29sb3I9IiMwMDAiIHBhaW50LW9yZGVyPSJmaWxsIG1hcmtlcnMgc3Ryb2tlIj48cGF0aCBkPSJNLjY0My43NTJhLjE1Ni4xNTYgMCAwMC0uMTMuMDU5Qy40NzYuODUuNDcuOTE3LjQ2OS45M2EuMDI1LjAyNSAwIDAwLjAyNi4wMjhoLjA2NmEuMDI1LjAyNSAwIDAwLjAyNC0uMDIuMTIuMTIgMCAwMS4wMi0uMDUyQy42MTguODcuNjMyLjg2OS42NTUuODY5aC4xMjJjMC0uMDAyLjA3Ni4wMDcuMTI5LS4wNUEuMTQzLjE0MyAwIDAwLjkyOC43ODcuMDI1LjAyNSAwIDAwLjkwNi43NTJILjY0M3oiIGZpbGw9IiMwNTAiLz48cGF0aCBkPSJNLjM5My40MWEuMDIuMDIgMCAwMC0uMDIuMDJ2LjI2YzAgLjAxMi4wMDEuMDI5LS4wMTQuMDQ0Qy4zMy43NTkuMjgyLjc1LjI2Ny43MzYuMjU3LjcyOC4yNS43MTMuMjQ0LjY4N0EuMDI1LjAyNSAwIDAwLjIyLjY3SC4xNTNhLjAyNC4wMjQgMCAwMC0uMDI1LjAyNmMuMDA0LjA1Mi4wMjUuMDkuMDUxLjExOWEuMTY3LjE2NyAwIDAwLjExMy4wNTJoLjAzNWEuMTg0LjE4NCAwIDAwLjExNS0uMDVBLjE4Mi4xODIgMCAwMC40OS42OTRWLjQzMUEuMDIuMDIgMCAwMC40Ny40MXpNLjc4Ny4zOWEuMDIuMDIgMCAwMC0uMDIuMDJ2LjI0MmMwIC4wMTEuMDA5LjAyLjAyLjAyaC4wNzdhLjAyLjAyIDAgMDAuMDItLjAyVi40MTFhLjAyLjAyIDAgMDAtLjAyLS4wMnpNLjM5My4yMThhLjAyLjAyIDAgMDAtLjAyLjAydi4wNzdjMCAuMDExLjAwOC4wMi4wMi4wMkguNDdhLjAyLjAyIDAgMDAuMDItLjAyVi4yMzhhLjAyLjAyIDAgMDAtLjAyLS4wMnpNLjU5LjFhLjAyLjAyIDAgMDAtLjAyLjAydi41MzJjMCAuMDExLjAwOS4wMi4wMi4wMmguMDc3YS4wMi4wMiAwIDAwLjAyLS4wMlYuMTJBLjAyLjAyIDAgMDAuNjY3LjF6IiBmaWxsPSIjMDBkNDAwIi8+PC9nPjwvc3ZnPg==)](https://jhale.dev)
-[![](https://img.shields.io/badge/Follow-thehale-0A66C2?logo=linkedin)](https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=thehale)
+[![Joseph Hale's software engineering blog](https://jhale.dev/badges/website.svg)](https://jhale.dev)
+[![](https://jhale.dev/badges/follow.svg)](https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=thehale)
 
 ![Example Expressive Resume](/examples/expressive_resume_readme_banner.svg)
 
@@ -18,8 +18,8 @@ easy to use.
 
 **Why Expressive Resume??**
 
- - **Declarative:** Use semantically meaningful commands like `\experience` and
-   `\achievement` instead of worrying about LaTeX plumbing.
+ - **Declarative:** Use semantically meaningful commands like `\experience`,
+   `\role`, and `\achievement` instead of worrying about LaTeX plumbing.
  - **Cover Letter:** Expressive includes both a resume template *and* a matching
    cover letter template.
  - **Machine/ATS Friendly:** Expressive Resume was designed by an engineer with
@@ -95,36 +95,94 @@ optional).
     city=,                  % Your city of residence (ignored if no `state` is given)
     state=,                 % Your state of residence
     qrcode=,                % the path to a qr code to show in the top right corner
-    fixobjectivespacing=    % Recommended when using both a qrcode and an `objective`
 ]
 ```
 
-If you want a summary/objective statement in your resume, that's easy to add.
+Then add any of the following components relevant to your experience and the job description.
+
+#### Summary/Objective Statement
 
 ```tex
 \objective{
     % Write your objective statement here.
 }
+\summary{
+    % Write your summary statement here.
+}
 ```
 
-Adding experiences and achievements is also straightforward.
+#### Work/Volunteer Experience
+
 ```tex
-\experience{Position}{Organization}{Start Date}{End Date}{
-    \achievement{
-        % Describe your achievement here
-    }
-    \achievement{
-        % Describe another achievement here.
+\experience{Organization}{
+    \role{Job Title}{Start Date - End Date}{
+        \achievement{
+            % Describe your achievement here
+        }
+        \achievement{
+            % Describe another achievement here.
+        }
     }
 }
 ```
 
-You can also easily add inline highlights for the technologies and skills
-relevant to the job position you are applying for.
+If you have been promoted while at an organization, simply list multiple
+`\role`s
 
 ```tex
-\tech{
-    % Name your familiar technology or skill
+\experience{Organization}{
+    \role{Promoted Title}{Start Date - End Date}{
+        \achievement{
+            % Describe your achievement here
+        }
+        \achievement{
+            % Describe another achievement here.
+        }
+    }
+    \role{Starting Title}{Start Date - End Date}{
+        \achievement{
+            % Describe your achievement here
+        }
+    }
+}
+```
+
+If your actual job title doesn't match your duties, consider writing an
+`\equivalent` title instead.
+
+```tex
+\role{Renamed Title \equivalent}{Start Date - End Date}{
+    \achievement{
+        % Describe your achievement here
+    }
+}
+```
+
+#### Technologies/Skills
+
+```tex
+% For example...
+\tech{Python}
+\tech{Docker}
+\tech{Terraform}
+```
+
+#### Educational degrees
+
+```tex
+\degree{Degree Name}{Institution}{Year}{
+    % Extra information, e.g. \achievement's
+}
+\degree{Degree Name \honors{e.g. Summa Cum Laude}}{Institution}{Year}{
+    % Extra information, e.g. \achievement's
+}
+```
+
+#### Awards
+
+```tex
+\award{Award Name}{Institution}{Year}{
+    % Extra information, e.g. \achievement's
 }
 ```
 
@@ -197,45 +255,65 @@ cover letter.
     middleinitial=N,
     lastname=Doe,
     email=john.doe@example.com,
-    phone=123-456-7890,
+    % phone=123-456-7890,
+    linkedin=johndoe,
     github=johndoe,
-    city=Town,
-    state=State,
-    qrcode=./images/qr.png,
-    fixobjectivespacing=true
+    % city=Town,
+    % state=State,
+    qrcode=./images/qr.png
 ]
 
 \objective{A software engineering graduate with 2 years of work
-experience at various internships \\ seeking opportunities to develop
-web/mobile applications for Company XYZ.}
-
-% ----- Education -----
-\section{Education}
-\experience{Bachelor of Science}{Software Engineering}{Aug 2018}{May 2022}{
-    \noindent Fabulous Honors College \hfill GPA: 4.00 \newline
-    Super Duper University, Town, State \newline
-}
+    experience at various internships seeking opportunities to develop
+    web/mobile applications for Company XYZ.}
 
 % ----- Work Experience -----
 \section{Work Experience}
-\experience{Summer Intern}{Radiant Software Systems}{Aug 2021}{May 2021}{
-    \achievement{
-        Developed a mobile app in \tech{React Native} that was
-        downloaded 100k times on Google Play.
+
+\experience{Radiant Software Systems}{%
+    \role{Software Engineer}{2021 - 2024}{
+        \achievement{
+
+            Developed a mobile app in \tech{React Native} that was
+            downloaded 100k times on Google Play.
+
+        }
     }
-    \achievement{
-        Collaborated in an \tech{Agile/Scrum} team of 8 engineers to
-        deliver new features every 2 weeks.
+    \role{Summer Intern}{2021}{
+        \achievement{
+
+            Collaborated in an \tech{Agile/Scrum} team of 8 engineers to
+            deliver new features every 2 weeks.
+
+        }
     }
 }
 
 % ----- Technical Projects -----
 \section{Technical Projects}
-\experience{Expressive Resume}{Personal Project}{Nov 2021}{Dec 2021}{
+
+\project{Expressive Resume}{2021 - 2024}{
     \achievement{
-        Created a \tech{\LaTeX} class that makes it easy for anyone to
+
+        Created a \tech{\LaTeX} class that enables anyone to
         quickly create a beautiful resume and cover letter.
+
     }
+
+}
+
+% ----- Education -----
+\section{Education}
+
+\degree{B.S. Software Engineering \honors{Summa Cum Laude}}{Super Duper University}{2022}{
+    \achievement{Ranked \#15 out of 463 students}
+}
+
+% ----- Awards -----
+\section{Awards}
+
+\award{Employee of the Month}{Radiant Software Systems}{2023}{
+    \achievement{Did some amazing stuff that really benefitted the company}
 }
 
 \end{document}
@@ -255,7 +333,8 @@ web/mobile applications for Company XYZ.}
     lastname=Doe,
     email=john.doe@example.com,
     phone=123-456-7890,
-    github=johndoe,
+    linkedin=johndoe,
+    % github=johndoe,
     city=Town,
     state=State
 ]

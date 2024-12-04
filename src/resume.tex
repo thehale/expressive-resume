@@ -9,55 +9,66 @@
     middleinitial=N,
     lastname=Doe,
     email=john.doe@example.com,
-    phone=123-456-7890,
+    % phone=123-456-7890,
     linkedin=johndoe,
     github=johndoe,
-    city=Town,
-    state=State,
-    qrcode=./images/qr.png,
-    fixobjectivespacing=true
+    % city=Town,
+    % state=State,
+    qrcode=./images/qr.png
 ]
 
 \objective{A software engineering graduate with 2 years of work
-    experience at various internships \\ seeking opportunities to develop
+    experience at various internships seeking opportunities to develop
     web/mobile applications for Company XYZ.}
-
-% ----- Education -----
-\section{Education}
-
-\experience{Bachelor of Science}{Software Engineering}{Aug 2018}{May 2022}{
-    \noindent Fabulous Honors College \hfill GPA: 4.00 \newline
-    Super Duper University, Town, State \newline
-}
 
 % ----- Work Experience -----
 \section{Work Experience}
 
-\experience{Summer Intern}{Radiant Software Systems}{Aug 2021}{May 2021}{
-    \achievement{
+\experience{Radiant Software Systems}{%
+    \role{Software Engineer}{2021 - 2024}{
+        \achievement{
 
-        Developed a mobile app in \tech{React Native} that was
-        downloaded 100k times on Google Play.
+            Developed a mobile app in \tech{React Native} that was
+            downloaded 100k times on Google Play.
 
+        }
     }
-    \achievement{
+    \role{Summer Intern}{2021}{
+        \achievement{
 
-        Collaborated in an \tech{Agile/Scrum} team of 8 engineers to
-        deliver new features every 2 weeks.
+            Collaborated in an \tech{Agile/Scrum} team of 8 engineers to
+            deliver new features every 2 weeks.
 
+        }
     }
 }
 
 % ----- Technical Projects -----
 \section{Technical Projects}
 
-\experience{Expressive Resume}{Personal Project}{Nov 2021}{Dec 2021}{
+\project{Expressive Resume}{2021-2024}{
+
     \achievement{
-
-        Created a \tech{\LaTeX} class that makes it easy for anyone to
-        quickly create a beautiful resume and cover letter.
-
+        Created a \tech{\LaTeX} class
+        that enables anyone to quickly
+        create a beautiful resume
+        and cover letter.
     }
+
+}
+
+% ----- Education -----
+\section{Education}
+
+\degree{B.S. Software Engineering \honors{Summa Cum Laude}}{Super Duper University}{2022}{
+    \achievement{Ranked \#15 out of 463 students}
+}
+
+% ----- Awards -----
+\section{Awards}
+
+\award{Employee of the Month}{Radiant Software Systems}{2023}{
+    \achievement{Did some amazing stuff that really benefitted the company}
 }
 
 \end{document}

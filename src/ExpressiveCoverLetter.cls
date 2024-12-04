@@ -13,7 +13,7 @@
 \RequirePackage{ragged2e}
 
 %% Define page layout
-\RequirePackage[margin=1in]{geometry}
+\RequirePackage[margin=0.5in]{geometry}
     \pagestyle{empty}
     \setlength{\parindent}{0pt}
     \setlength{\parskip}{\baselineskip}
@@ -21,54 +21,54 @@
 %% ----- Custom Commands -----
 % Header Block
 \newkeycommand{\coverletterheader}[
-        firstname,middleinitial,lastname,
-        email,
-        phone,  % Must be in XXX-XXX-XXXX format to become a valid link
-        linkedin,
-        github,
-        city,  % Ignored if `state` is not also provided
-        state,
-        % qrcode,  % Path to an image of a 1000x1000px QR Code
-        % fixobjectivespacing  % Fixes issues with vertical spacing when using QR Code + Objective statement.
-        ]{
+    firstname,middleinitial,lastname,
+    email,
+    phone,  % Must be in XXX-XXX-XXXX format to become a valid link
+    github,
+    linkedin,
+    city,  % Ignored if `state` is not also provided
+    state,
+    % qrcode,  % Path to an image of a 1000x1000px QR Code
+    % fixobjectivespacing  % Fixes issues with vertical spacing when using QR Code + Objective statement.
+]{
     \begin{Center}
         \nametitle{\commandkey{firstname}}{\ifcommandkey{middleinitial}{\commandkey{middleinitial}. }{}\commandkey{lastname}}
         \rule{\linewidth}{1pt}
 
         {%
             \ifcommandkey{email}%
-                {%
-                    \email{\commandkey{email}}%
-                    \ifcommandkey{phone}{\contactseparator}%
-                        {\ifcommandkey{linkedin}{\contactseparator}%
-                            {\ifcommandkey{github}{\contactseparator}%
-                                {\ifcommandkey{state}{\contactseparator}{}}}}%
-                }%
-                {}%
+            {%
+                \email{\commandkey{email}}%
+                \ifcommandkey{phone}{\contactseparator}%
+                {\ifcommandkey{github}{\contactseparator}%
+                    {\ifcommandkey{linkedin}{\contactseparator}{%
+                            \ifcommandkey{state}{\contactseparator}{}}}}%
+            }%
+            {}%
             \ifcommandkey{phone}%
-                {%
-                    \phone{\commandkey{phone}}%
-                    \ifcommandkey{linkedin}{\contactseparator}%
-                        {\ifcommandkey{github}{\contactseparator}%
-                            {\ifcommandkey{state}{\contactseparator}{}}}%
-                }%
-                {}%
-            \ifcommandkey{linkedin}%
-                {%
-                    \linkedin{\commandkey{linkedin}}%
-                    \ifcommandkey{github}{\contactseparator}%
-                        {\ifcommandkey{state}{\contactseparator}{}}%
-                }%
-                {}%
+            {%
+                \phone{\commandkey{phone}}%
+                \ifcommandkey{github}{\contactseparator}%
+                {\ifcommandkey{linkedin}{\contactseparator}{%
+                        \ifcommandkey{state}{\contactseparator}{}}}%
+            }%
+            {}%
             \ifcommandkey{github}%
-                {%
-                    \github{\commandkey{github}}%
-                    \ifcommandkey{state}{\contactseparator}{}%
-                }%
-                {}%
+            {%
+                \github{\commandkey{github}}%
+                \ifcommandkey{linkedin}{\contactseparator}{%
+                    \ifcommandkey{state}{\contactseparator}{}}%
+            }%
+            {}%
+            \ifcommandkey{linkedin}%
+            {%
+                \linkedin{\commandkey{linkedin}}%
+                \ifcommandkey{state}{\contactseparator}{}%
+            }%
+            {}%
             \ifcommandkey{state}%
-                {\location{\ifcommandkey{city}{\commandkey{city}, }{}\commandkey{state}}}%
-                {}%
+            {\location{\ifcommandkey{city}{\commandkey{city}, }{}\commandkey{state}}}%
+            {}%
         }
     \end{Center}
 
@@ -91,6 +91,6 @@
 
 %% ----- Four Required Configurations -----
 \renewcommand{\normalsize}{\fontsize{12pt}{18pt}\selectfont}
-\setlength{\textwidth}{6.5in}
-\setlength{\textheight}{9in}
+\setlength{\textwidth}{7.5in}
+\setlength{\textheight}{10in}
 \pagenumbering{arabic}
