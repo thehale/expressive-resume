@@ -30,6 +30,20 @@ easy to use.
  - **Compatibility:** Expressive Resume is written in LaTeX2e, so it is compatible
    with most LaTeX typesetting engines.
 
+⚡️ Start writing in 5 minutes: **[Quickstart ↩️](#quickstart)**
+
+<!-- Sponsors --> <blockquote>
+
+<sub>**Expressive Resume is graciously sponsored by**</sub>
+
+[zapply-sponsor]: https://app.zapply.jobs/onboarding/?ref=github-cta-thehale "Visit
+Zapply"
+[<img height="96" src="examples/sponsors/zapply/apply-faster-button.png" alt="Zapply">][zapply-sponsor]<br>
+[**Zapply**][zapply-sponsor] helps job seekers apply faster with its Chrome autofill
+extension, dedicated job board, multiple resume profiles, and application tracking tools.
+
+</blockquote> <!-- Sponsors --> 
+
 ## Quickstart
 
 The recommended way to use Expressive Resume is via the included "VS Code
