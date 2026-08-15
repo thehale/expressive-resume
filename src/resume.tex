@@ -4,18 +4,9 @@
 \begin{document}
 
 % ----- Name + Contact Information -----
-\resumeheader[
-    firstname=John,
-    middleinitial=N,
-    lastname=Doe,
-    email=john.doe@example.com,
-    % phone=123-456-7890,
-    linkedin=johndoe,
-    github=johndoe,
-    % city=Town,
-    % state=State,
-    qrcode=./images/qr.png
-]
+\resumeheader{John N. Doe}
+  {\email{john.doe@example.com}}{\linkedin{thehale}}
+  {\github{thehale}}{\phone{123-456-7890}}
 
 \objective{A software engineering graduate with 2 years of work
     experience at various internships seeking opportunities to develop
@@ -24,21 +15,17 @@
 % ----- Work Experience -----
 \section{Work Experience}
 
-\experience{Radiant Software Systems}{%
+\experience{Radiant Software Systems}{Super City, State}{%
     \role{Software Engineer}{2021 - 2024}{
         \achievement{
-
             Developed a mobile app in \tech{React Native} that was
             downloaded 100k times on Google Play.
-
         }
     }
-    \role{Summer Intern}{2021}{
+    \role{Summer Intern \parttime}{2021}{
         \achievement{
-
             Collaborated in an \tech{Agile/Scrum} team of 8 engineers to
             deliver new features every 2 weeks.
-
         }
     }
 }
@@ -47,14 +34,12 @@
 \section{Technical Projects}
 
 \project{Expressive Resume}{2021-2024}{
-
     \achievement{
         Created a \tech{\LaTeX} class
         that enables anyone to quickly
         create a beautiful resume
         and cover letter.
     }
-
 }
 
 % ----- Education -----

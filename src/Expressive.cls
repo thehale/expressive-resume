@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{Expressive}[2024/08/10 Base Class for Expressive Resumes/Cover Letters]
 
-\newcommand{\spacesmall}{5pt}
-\newcommand{\spacenormal}{10pt}
+\newcommand{\spacesmall}{6pt}
+\newcommand{\spacenormal}{12pt}
 
 %% ----- Options -----
 % https://www.latex-project.org/help/documentation/clsguide.pdf
@@ -101,18 +101,18 @@
 \catcode`\/=8 %
 \@firstofone
 {
-    \endgroup
-    \renewcommand{\ifcommandkey}[1]{%
-        \csname @\expandafter \expandafter \expandafter
-        \expandafter \expandafter \expandafter \expandafter
-        \kcmd@nbk \commandkey {#1}//{first}{second}//oftwo\endcsname
-    }
+\endgroup
+\renewcommand{\ifcommandkey}[1]{%
+\csname @\expandafter \expandafter \expandafter
+\expandafter \expandafter \expandafter \expandafter
+\kcmd@nbk \commandkey {#1}//{first}{second}//oftwo\endcsname
+}
 }
 
 %% ----- Custom Commands -----
 % Contact Information
 \newcommand{\nametitle}[2]{%
-    { \Huge \textbf{#1 #2} }\\
+    { \Huge \textbf{#1 #2} }
 }
 \newcommand{\contactseparator}{
     \hspace{\spacesmall}\textbar\hspace{\spacesmall}
@@ -125,40 +125,42 @@
 
 % Experience/Achievements
 \newcommand{\equivalent}{\textnormal{\textsc{equivalent}}}
+\newcommand{\parttime}{\textnormal{\textsc{part time}}}
 \newcommand{\honors}[1]{\textnormal{\emph{#1}}}
 \newcommand{\roletitle}[1]{\textbf{#1}}
 \newcommand{\tech}[1]{{\textpdfrender{TextRenderingMode=FillStroke,StrokeColor=black,LineWidth=0.25pt}{#1}}}
-\newcommand{\notable}[1]{{\color{darkred}#1}}
-\newcommand{\tenure}[1]{\textbf{#1}}
+\newcommand{\notable}[1]{{#1}} % Previously \color{darkred}
+\newcommand{\tenure}[1]{{\color{gray}#1}}
 \newcommand{\achievement}[1]{%
-    \begin{itemize}
+    \begin{itemize}[leftmargin=15px]
         \item #1
     \end{itemize}
     \vspace{\spacesmall}
 }
 \newcommand{\degree}[4]{%
-    \noindent\textbf{#1}, #2 \hfill \tenure{#3} \vspace{\spacesmall}\par
+    \noindent\textbf{#1} $|$ #2 \hfill\tenure{#3}\vspace{\spacesmall}\par
     #4
 }
 \newcommand{\award}[4]{%
-    \noindent\textbf{#1}, #2 \hfill \tenure{#3} \vspace{\spacesmall}\par
+    \noindent\textbf{#1} $|$ #2 \hfill\tenure{#3}\vspace{\spacesmall}\par
     #4
 }
 \newcommand{\project}[3]{%
-    \noindent\textbf{#1} \hfill \tenure{#2} \vspace{\spacesmall}\par
+    \noindent\textbf{#1} \hfill \tenure{#2}\vspace{\spacesmall}\par
     #3
     \vspace{\spacesmall}
 }
 \newcommand{\role}[3]{%
     \noindent\roletitle{#1} \hfill \tenure{#2}\vspace{\spacesmall}\par
     #3
+    \vspace{\spacesmall}
 }
-\newcommand{\experience}[2]{%
-    \noindent\textsc{#1}\dotfill
+\newcommand{\experience}[3]{%
+    \noindent\emph{#1}\hfill{\emph{#2}}
 
     \vspace{\spacesmall}
 
-    \noindent#2
+    \noindent#3
 
     \vspace{\spacesmall}
 }

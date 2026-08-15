@@ -12,70 +12,31 @@
 %% ----- Required Packages -----
 %% Define page layout
 \RequirePackage[margin=0.5in]{geometry}
-    \pagestyle{empty}
+\pagestyle{empty}
 
 %% ----- Custom Commands -----
 % Header Block
-\newkeycommand{\resumeheader}[
-    firstname,middleinitial,lastname,
-    email,
-    phone,  % Must be in XXX-XXX-XXXX format to become a valid link
-    github,
-    linkedin,
-    city,  % Ignored if `state` is not also provided
-    state,
-    qrcode  % Path to an image of a 1000x1000px QR Code
-]{
+\newcommand{\resumeheader}[5]{
     \begin{flushleft}
-        \nametitle{\commandkey{firstname}}{\ifcommandkey{middleinitial}{\commandkey{middleinitial}. }{}\commandkey{lastname}}
-        \vspace{7pt}
-        {%
-            \ifcommandkey{email}%
-            {%
-                \email{\commandkey{email}}%
-                \ifcommandkey{phone}{\contactseparator}%
-                {\ifcommandkey{github}{\contactseparator}%
-                    {\ifcommandkey{linkedin}{\contactseparator}%
-                        {\ifcommandkey{state}{\contactseparator}{}}}}%
-            }%
-            {}%
-            \ifcommandkey{phone}%
-            {%
-                \phone{\commandkey{phone}}%
-                \ifcommandkey{github}{\contactseparator}%
-                {\ifcommandkey{linkedin}{\contactseparator}%
-                    {\ifcommandkey{state}{\contactseparator}{}}}%
-            }%
-            {}%
-            \ifcommandkey{github}%
-            {%
-                \github{\commandkey{github}}%
-                \ifcommandkey{linkedin}{\contactseparator}%
-                {\ifcommandkey{state}{\contactseparator}{}}%
-            }%
-            {}%
-            \ifcommandkey{linkedin}%
-            {%
-                \linkedin{\commandkey{linkedin}}%
-                \ifcommandkey{state}{\contactseparator}{}%
-            }%
-            {}%
-            \ifcommandkey{state}%
-            {\location{\ifcommandkey{city}{\commandkey{city}, }{}\commandkey{state}}}%
-            {}%
-        }
+        \nametitle{#1}{}
+        \hfill
+        \begin{tabular}{ll}
+            #2 & #3 \\
+            #4 & #5 \\
+        \end{tabular}
     \end{flushleft}
-
-    \ifcommandkey{qrcode}{%
-        % QR Code - Generated with https://www.logodesign.net/qrcode-generator
-        \begin{tikzpicture}[remember picture,overlay]%
-            \node[anchor=north east,yshift=-.33in,xshift=-.5in]%
-            at (current page.north east)%
-            {\includegraphics[width=.09\linewidth]{\commandkey{qrcode}}};
-        \end{tikzpicture}
-        \vspace{-20pt}
-    }{}
 }
+
+\newcommand{\qrcode}[1]{
+    % QR Code - Generated with https://www.logodesign.net/qrcode-generator
+    \begin{tikzpicture}[remember picture,overlay]%
+        \node[anchor=north east,yshift=-.33in,xshift=-.5in]%
+        at (current page.north east)%
+        {\includegraphics[width=.09\linewidth]{#1}};
+    \end{tikzpicture}
+    \vspace{-20pt}
+}
+
 \newcommand{\tagline}[2]{%
     \begin{flushleft}
         \textsc{#1}: #2

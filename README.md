@@ -93,23 +93,32 @@ Use a `documentclass` of `ExpressiveResume`
 \end{document}
 ```
 
-Create your resume header with the `resumeheader` command (all parameters are
-optional).
+Start by writing your name in the `resumeheader` command.
 
 ```tex
-\resumeheader[
-    firstname=,             % Your first name
-    middleinitial=,         % Your middle initial
-    lastname=,              % Your last name
-    email=,                 % Your email
-    phone=,                 % Your phone number, formatted as XXX-XXX-XXXX
-    linkedin=,              % Your LinkedIn handle (without the @)
-    github=,                % Your GitHub handle (without the @)
-    city=,                  % Your city of residence (ignored if no `state` is given)
-    state=,                 % Your state of residence
-    qrcode=,                % the path to a qr code to show in the top right corner
-]
+\resumeheader{Your Name}
+  {contact info - 1}{contact info - 2}
+  {contact info - 3}{contact info - 4}
 ```
+
+Some built-in options for contact-info
+
+```tex
+\email{you@example.com}
+\phone{123-456-7890}
+\linkedin{username} % e.g. From linkedin.com/in/username
+\github{username} % e.g. From github.com/username
+\location{City, State}
+```
+
+> [!TIP]
+> 
+> Here's a complete example
+> ```tex
+> \resumeheader{John N. Doe}
+>  {\email{john.doe@example.com}}{\linkedin{thehale}}
+>  {\github{thehale}}{\phone{123-456-7890}}
+> ```
 
 Then add any of the following components relevant to your experience and the job description.
 
@@ -127,7 +136,7 @@ Then add any of the following components relevant to your experience and the job
 #### Work/Volunteer Experience
 
 ```tex
-\experience{Organization}{
+\experience{Organization}{Location}{
     \role{Job Title}{Start Date - End Date}{
         \achievement{
             % Describe your achievement here
@@ -143,7 +152,7 @@ If you have been promoted while at an organization, simply list multiple
 `\role`s
 
 ```tex
-\experience{Organization}{
+\experience{Organization}{Location}{
     \role{Promoted Title}{Start Date - End Date}{
         \achievement{
             % Describe your achievement here
@@ -165,6 +174,16 @@ If your actual job title doesn't match your duties, consider writing an
 
 ```tex
 \role{Renamed Title \equivalent}{Start Date - End Date}{
+    \achievement{
+        % Describe your achievement here
+    }
+}
+```
+
+Part-time roles can be indicated with `\parttime`.
+
+```tex
+\role{Evening Job \parttime}{Start Date - End Date}{
     \achievement{
         % Describe your achievement here
     }
@@ -218,21 +237,23 @@ Use a `documentclass` of `ExpressiveCoverLetter`
 \end{document}
 ```
 
-Create your cover letter header with the `coverletterheader` command (all
-parameters are optional).
+Create your cover letter header with the `coverletterheader` command.
 
 ```tex
-\coverletterheader[
-    firstname=,             % Your first name
-    middleinitial=,         % Your middle initial
-    lastname=,              % Your last name
-    email=,                 % Your email
-    phone=,                 % Your phone number, formatted as XXX-XXX-XXXX
-    linkedin=,              % Your LinkedIn handle (without the @)
-    github=,                % Your GitHub handle (without the @)
-    city=,                  % Your city of residence (ignored if no `state` is given)
-    state=,                 % Your state of residence
-]
+\coverletterheader{Full Name}
+    {contact info - 1}{contact info - 2}
+    {contact info - 3}{contact info - 4}
+```
+
+For contact fields, you can reuse the same helper commands available in resume
+headers:
+
+```tex
+\email{you@example.com}
+\phone{123-456-7890}
+\linkedin{username} % e.g. From linkedin.com/in/username
+\github{username} % e.g. From github.com/username
+\location{City, State}
 ```
 
 From there, just write out the text of your cover letter, using a blank line
@@ -263,18 +284,9 @@ cover letter.
 \begin{document}
 
 % ----- Name + Contact Information -----
-\resumeheader[
-    firstname=John,
-    middleinitial=N,
-    lastname=Doe,
-    email=john.doe@example.com,
-    % phone=123-456-7890,
-    linkedin=johndoe,
-    github=johndoe,
-    % city=Town,
-    % state=State,
-    qrcode=./images/qr.png
-]
+\resumeheader{John N. Doe}
+  {\email{john.doe@example.com}}{\linkedin{thehale}}
+  {\github{thehale}}{\phone{123-456-7890}}
 
 \objective{A software engineering graduate with 2 years of work
     experience at various internships seeking opportunities to develop
@@ -283,21 +295,17 @@ cover letter.
 % ----- Work Experience -----
 \section{Work Experience}
 
-\experience{Radiant Software Systems}{%
+\experience{Radiant Software Systems}{Super City, State}{%
     \role{Software Engineer}{2021 - 2024}{
         \achievement{
-
             Developed a mobile app in \tech{React Native} that was
             downloaded 100k times on Google Play.
-
         }
     }
     \role{Summer Intern}{2021}{
         \achievement{
-
             Collaborated in an \tech{Agile/Scrum} team of 8 engineers to
             deliver new features every 2 weeks.
-
         }
     }
 }
@@ -307,10 +315,8 @@ cover letter.
 
 \project{Expressive Resume}{2021 - 2024}{
     \achievement{
-
         Created a \tech{\LaTeX} class that enables anyone to
         quickly create a beautiful resume and cover letter.
-
     }
 
 }
@@ -340,17 +346,9 @@ cover letter.
 
 \begin{document}
 
-\coverletterheader[
-    firstname=John,
-    middleinitial=N,
-    lastname=Doe,
-    email=john.doe@example.com,
-    phone=123-456-7890,
-    linkedin=johndoe,
-    % github=johndoe,
-    city=Town,
-    state=State
-]
+\coverletterheader{John N. Doe}
+    {\email{john.doe@example.com}}{\linkedin{thehale}}
+    {\phone{123-456-7890}}{\location{Town, State}}
 
 \vspace{0.25in}
 \today

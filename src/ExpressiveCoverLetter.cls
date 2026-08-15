@@ -14,74 +14,19 @@
 
 %% Define page layout
 \RequirePackage[margin=0.5in]{geometry}
-    \pagestyle{empty}
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{\baselineskip}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
 
 %% ----- Custom Commands -----
 % Header Block
-\newkeycommand{\coverletterheader}[
-    firstname,middleinitial,lastname,
-    email,
-    phone,  % Must be in XXX-XXX-XXXX format to become a valid link
-    github,
-    linkedin,
-    city,  % Ignored if `state` is not also provided
-    state,
-    % qrcode,  % Path to an image of a 1000x1000px QR Code
-    % fixobjectivespacing  % Fixes issues with vertical spacing when using QR Code + Objective statement.
-]{
+\newcommand{\coverletterheader}[5]{
     \begin{Center}
-        \nametitle{\commandkey{firstname}}{\ifcommandkey{middleinitial}{\commandkey{middleinitial}. }{}\commandkey{lastname}}
+        \nametitle{#1}{}\\
         \rule{\linewidth}{1pt}
 
-        {%
-            \ifcommandkey{email}%
-            {%
-                \email{\commandkey{email}}%
-                \ifcommandkey{phone}{\contactseparator}%
-                {\ifcommandkey{github}{\contactseparator}%
-                    {\ifcommandkey{linkedin}{\contactseparator}{%
-                            \ifcommandkey{state}{\contactseparator}{}}}}%
-            }%
-            {}%
-            \ifcommandkey{phone}%
-            {%
-                \phone{\commandkey{phone}}%
-                \ifcommandkey{github}{\contactseparator}%
-                {\ifcommandkey{linkedin}{\contactseparator}{%
-                        \ifcommandkey{state}{\contactseparator}{}}}%
-            }%
-            {}%
-            \ifcommandkey{github}%
-            {%
-                \github{\commandkey{github}}%
-                \ifcommandkey{linkedin}{\contactseparator}{%
-                    \ifcommandkey{state}{\contactseparator}{}}%
-            }%
-            {}%
-            \ifcommandkey{linkedin}%
-            {%
-                \linkedin{\commandkey{linkedin}}%
-                \ifcommandkey{state}{\contactseparator}{}%
-            }%
-            {}%
-            \ifcommandkey{state}%
-            {\location{\ifcommandkey{city}{\commandkey{city}, }{}\commandkey{state}}}%
-            {}%
-        }
+        #2\contactseparator#3\contactseparator#4\contactseparator#5
     \end{Center}
-
-    % \ifcommandkey{qrcode}{%
-    %     % QR Code - Generated with https://www.logodesign.net/qrcode-generator
-    %     \begin{tikzpicture}[remember picture,overlay]%
-    %         \node[anchor=north east,yshift=-.5in,xshift=-.5in]%
-    %             at (current page.north east)%
-    %             {\includegraphics[width=.1\linewidth]{\commandkey{qrcode}}};
-    %     \end{tikzpicture}
-    %     \vspace{-12pt}
-    %     \ifcommandkey{fixobjectivespacing}{\vspace{-10pt}}{}
-    % }{}
 }
 \newcommand{\objective}[1]{%
     \begin{flushleft}
