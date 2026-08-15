@@ -81,8 +81,16 @@
         \textsc{#1}: #2
     \end{flushleft}
 }
-\newcommand{\summary}[1]{\tagline{Summary}{#1}}
-\newcommand{\objective}[1]{\tagline{Objective}{#1}}
+\newcommand{\summary}[1]{
+    \begin{flushleft}
+        #1
+    \end{flushleft}
+}
+\newcommand{\objective}[1]{
+    \begin{flushleft}
+        #1
+    \end{flushleft}
+}
 
 
 %% ----- Four Required Configurations -----

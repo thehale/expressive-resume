@@ -98,12 +98,12 @@
 \catcode`\/=8 %
 \@firstofone
 {
-\endgroup
-\renewcommand{\ifcommandkey}[1]{%
-\csname @\expandafter \expandafter \expandafter
-\expandafter \expandafter \expandafter \expandafter
-\kcmd@nbk \commandkey {#1}//{first}{second}//oftwo\endcsname
-}
+    \endgroup
+    \renewcommand{\ifcommandkey}[1]{%
+        \csname @\expandafter \expandafter \expandafter
+        \expandafter \expandafter \expandafter \expandafter
+        \kcmd@nbk \commandkey {#1}//{first}{second}//oftwo\endcsname
+    }
 }
 
 %% ----- Custom Commands -----
@@ -125,6 +125,7 @@
 \newcommand{\honors}[1]{\textnormal{\emph{#1}}}
 \newcommand{\roletitle}[1]{\textbf{#1}}
 \newcommand{\tech}[1]{{\textpdfrender{TextRenderingMode=FillStroke,StrokeColor=black,LineWidth=0.25pt}{#1}}}
+\newcommand{\notable}[1]{{\color{darkred}#1}}
 \newcommand{\tenure}[1]{\textbf{#1}}
 \newcommand{\achievement}[1]{%
     \begin{itemize}
