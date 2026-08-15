@@ -18,6 +18,7 @@
 
 %% Add support for custom coloring
 \RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{Colors}
 
 %% Add support for many custom icons.
 \RequirePackage{fontawesome5}
