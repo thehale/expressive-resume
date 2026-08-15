@@ -27,6 +27,9 @@
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 
+%% Change to a Sans Serif Font
+\usepackage{sans}
+
 %% Include contour for creating semibold
 %% From: https://tex.stackexchange.com/a/191202/258631
 \usepackage{pdfrender}
@@ -66,7 +69,7 @@
 \RequirePackage{titlesec}
 % Section Formatting
 \titleformat{\section}
-{\color{blue}\Large\scshape\raggedright}  % Shape
+{\Large\bfseries\raggedright}  % Shape
 {}
 {0em}
 {}
@@ -109,7 +112,7 @@
 %% ----- Custom Commands -----
 % Contact Information
 \newcommand{\nametitle}[2]{%
-    { \Huge #1 \textsc{#2} }\\
+    { \Huge \textbf{#1 #2} }\\
 }
 \newcommand{\contactseparator}{
     \hspace{\spacesmall}\textbar\hspace{\spacesmall}
