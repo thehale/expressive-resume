@@ -49,7 +49,7 @@
 \hypersetup{
     colorlinks,
     breaklinks,
-    urlcolor=linkcolour,  % Color them black
+    urlcolor=zaffre,  % Color them black
     linkcolor=linkcolour  % Color them black
 }
 
