@@ -27,6 +27,10 @@
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 
+%% Include contour for creating semibold
+%% From: https://tex.stackexchange.com/a/191202/258631
+\usepackage{pdfrender}
+
 %% Add advanced table formatting support
 % From https://gist.github.com/LanternD/1edd0fcc64f287d841b6da3ec38c69a2
 \RequirePackage{array}
@@ -120,7 +124,7 @@
 \newcommand{\equivalent}{\textnormal{\textsc{equivalent}}}
 \newcommand{\honors}[1]{\textnormal{\emph{#1}}}
 \newcommand{\roletitle}[1]{\textbf{#1}}
-\newcommand{\tech}[1]{{\color{Brown}\textbf{#1}}}
+\newcommand{\tech}[1]{{\textpdfrender{TextRenderingMode=FillStroke,StrokeColor=black,LineWidth=0.25pt}{#1}}}
 \newcommand{\tenure}[1]{\textbf{#1}}
 \newcommand{\achievement}[1]{%
     \begin{itemize}
