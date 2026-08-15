@@ -71,9 +71,9 @@
         \begin{tikzpicture}[remember picture,overlay]%
             \node[anchor=north east,yshift=-.33in,xshift=-.5in]%
             at (current page.north east)%
-            {\includegraphics[width=.1\linewidth]{\commandkey{qrcode}}};
+            {\includegraphics[width=.09\linewidth]{\commandkey{qrcode}}};
         \end{tikzpicture}
-        \vspace{-16pt}
+        \vspace{-20pt}
     }{}
 }
 \newcommand{\tagline}[2]{%
